@@ -7,11 +7,11 @@
 #include "base.h"
 using namespace std;
 
-class DemoTests : public ::testing::Test {
+class BaseTests : public ::testing::Test {
 
 };
 
-TEST_F(DemoTests, fortest) {
+TEST_F(BaseTests, fortest) {
     int v[] = {0, 1, 2, 3};
     for (auto x : v) {
         cout << x << "\n";
@@ -30,14 +30,14 @@ TEST_F(DemoTests, fortest) {
     }
 }
 
-TEST_F(DemoTests, fortest1) {
+TEST_F(BaseTests, fortest1) {
     int v[] = {0, 1, 2, 3};
     for (auto i = 0; i < sizeof (v) / sizeof (v[0]); i++) {
         cout << &v[i] << "\t" << v[i] << "\n";
     }
 }
 
-TEST_F(DemoTests, fortest2) {
+TEST_F(BaseTests, fortest2) {
     int v[] = {0, 1, 2, 3};
 
     for (auto i = 0; i < 4; i++) {
@@ -54,7 +54,7 @@ TEST_F(DemoTests, fortest2) {
     }
 }
 
-TEST_F(DemoTests, fortest3) {
+TEST_F(BaseTests, fortest3) {
     auto a = new int(1);
     auto b = 1;
     cout << a << "\t" << b;
@@ -62,7 +62,7 @@ TEST_F(DemoTests, fortest3) {
     char* c = "123";
 }
 
-TEST_F(DemoTests, enum1) {
+TEST_F(BaseTests, enum1) {
     Traffic_light l = Traffic_light::red;
     Traffic_light next = ++l;
 }
