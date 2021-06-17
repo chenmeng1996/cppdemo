@@ -6,7 +6,7 @@ project(cppdemo)
 set(CMAKE_CXX_STANDARD 11)
 
 add_library(cppdemo
-        demo.cpp vector.h)
+        demo.cpp vector.h function_object.h)
 
 #############################################
 # Unit tests
@@ -14,7 +14,7 @@ add_subdirectory(3rd_party/google-test)
 # enable CTest testing
 enable_testing()
 # Add a testing executable
-add_executable(unit_tests unit_tests.cpp base_tests.cpp init_tests.cpp vector.h vector_tests.cpp)
+add_executable(unit_tests unit_tests.cpp base_tests.cpp init_tests.cpp vector.h vector_tests.cpp function_object_tests.cpp)
 
 target_link_libraries(unit_tests
         cppdemo

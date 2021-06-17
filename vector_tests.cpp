@@ -21,6 +21,9 @@ Vector<double> f() {
     return z; // 移动
 }
 
+// 遍历
 TEST(VectorTests, test1) {
-
+    Vector<int> x = {1, 2, 3, 4, 5};
+    for (auto& i : x)
+        cout << i << endl;
 }

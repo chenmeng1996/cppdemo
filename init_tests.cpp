@@ -45,4 +45,5 @@ TEST(InitTests, test2) {
     p++;
     // 引用指向数组元素
     int& r = v3[1];
+    std::vector<double> x = {1, 2};
 }
