@@ -15,15 +15,15 @@ class base {
 #endif //C__DEMO_BASE_H
 
 
-class Vector {
-public:
-    Vector(int sz) : elem{new double[sz]}, sz{sz} {}
-    double& operator[](int i) {return elem[i];} // 通过下标访问元素
-    int size() {return sz;}
-private:
-    double* elem;
-    int sz;
-};
+//class Vector {
+//public:
+//    Vector(int sz) : elem{new double[sz]}, sz{sz} {}
+//    double& operator[](int i) {return elem[i];} // 通过下标访问元素
+//    int size() {return sz;}
+//private:
+//    double* elem;
+//    int sz;
+//};
 
 enum class Traffic_light {green, yellow, red};
 Traffic_light& operator++(Traffic_light& t) { // 前置运算符
@@ -35,4 +35,16 @@ Traffic_light& operator++(Traffic_light& t) { // 前置运算符
         case Traffic_light::red:
             return t=Traffic_light::green;
     }
+}
+
+void hello() {
+    cout << "hello world" << endl;
+}
+
+// 可变参数模版
+void print_kv() {}
+template<typename T, typename... F>
+void print_kv(T key, F... value) {
+    cout << key << endl;
+    print_kv(value...);
 }

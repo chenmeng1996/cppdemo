@@ -3,7 +3,6 @@
 //
 
 #include <gtest/gtest.h>
-#include "demo.h"
 #include "base.h"
 using namespace std;
 
@@ -65,4 +64,8 @@ TEST_F(BaseTests, fortest3) {
 TEST_F(BaseTests, enum1) {
     Traffic_light l = Traffic_light::red;
     Traffic_light next = ++l;
+}
+
+TEST_F(BaseTests, param1) {
+    print_kv("a", 1, 2, 3);
 }
