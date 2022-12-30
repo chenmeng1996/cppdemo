@@ -1,7 +1,13 @@
 #include <iostream>
-#include "base.h"
+#include "base/base.h"
+#include "container/vec.h"
+
 
 int main() {
     hello();
+    base hi;
+    hi.print();
+
+    test();
     return 0;
 }

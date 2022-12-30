@@ -5,22 +5,11 @@ project(cppdemo)
 # set the c++ standard
 set(CMAKE_CXX_STANDARD 11)
 
-add_library(cppdemo_lib
-        empty.cpp vector.h function_object.h)
-add_executable(cppdemo_exec
-        main.cpp)
-
-#############################################
-# Unit tests
-add_subdirectory(3rd_party/google-test)
-# enable CTest testing
-enable_testing()
-# Add a testing executable
-add_executable(unit_tests unit_tests.cpp base_tests.cpp init_tests.cpp vector_tests.cpp function_object_tests.cpp)
-
-target_link_libraries(unit_tests
-        cppdemo_lib
-        GTest::GTest
-        GTest::Main
+set(SOURCES
+        base/base.cpp
 )
-add_test(test_all unit_tests)
+add_library(common ${SOURCES})
+
+add_executable(main main.cpp)
+target_include_directories(main PRIVATE ${PROJECT_SOURCE_DIR})
+target_link_libraries(main common)
